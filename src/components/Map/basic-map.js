@@ -14,7 +14,7 @@ export default class BasicMap extends React.Component {
             highlightOnHover: true,
           }}
           fills={{
-            defaultFill: "lightgreen",
+            defaultFill: "dark",
           }}
         />
       </Example>
