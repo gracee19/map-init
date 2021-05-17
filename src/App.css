@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.Example {
+  align-items: center;
+  
+}
+
+.Datamaps {
+	width: 450px;
+	height: 300px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.Datamaps {
+		width: 570px;
+		height: 380px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	.Datamaps {
+		width: 660px;
+		height: 440px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	.Datamaps {
+		width: 750px;
+		height: 500px;
+	}	
+ }

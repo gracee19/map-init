@@ -1,11 +1,15 @@
 import Navbar from "./components/NavBar";
 import './App.css';
-// import BasicExample from "./components/Map/basic-map";
+import ContainerBox from "./components/Container"
+import Wrapper from "./components/Wrapper";
 
 function App() {
   return (
     <div>
+      <Wrapper>
       <Navbar/>
+        <ContainerBox/>
+      </Wrapper>
     </div>
   );
 }
