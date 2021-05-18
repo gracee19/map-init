@@ -1,16 +1,33 @@
-import Navbar from "./components/NavBar";
-import './App.css';
-import ContainerBox from "./components/Container"
+// import NavBar from "./components/NavBar";
+import "./App.css";
+// import ContainerBox from "./components/Container"
 import Wrapper from "./components/Wrapper";
+import MainPage from "./components/MainPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./components/Login";
+import SignUp from "./components/Login/signup"
 
 function App() {
   return (
-    <div>
-      <Wrapper>
-      <Navbar/>
-        <ContainerBox/>
-      </Wrapper>
-    </div>
+    <Router>
+      <div>
+        <Wrapper>
+          {/* <NavBar/> 
+            <ContainerBox/> */}
+          <Switch>
+            <Route exact path={"/"}>
+              <MainPage />
+            </Route>
+            <Route path={"/login"}>
+              <Login />
+            </Route>
+            <Route path={"/signup"}>
+              <SignUp />
+            </Route>
+          </Switch>
+        </Wrapper>
+      </div>
+    </Router>
   );
 }
 

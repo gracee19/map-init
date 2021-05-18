@@ -1,15 +1,21 @@
 import React from "react";
-// import Search from 'semantic-ui-react';
+import {Grid, Search } from "semantic-ui-react";
 
-const Search = () => (
-    <div className="ui search">
-        <div className="ui icon input">
-            <input className="prompt" type="text" placeholder="Search countries..."/>
-            <i className="search icon">
-            </i>
-        </div>
-        <div className="results"></div>
-    </div>
+const SearchForm = () => (
+  <Grid>
+    <Grid.Column width={3}>
+      <Search
+        placeholder="Search Country" 
+        // loading={loading}
+        // onResultSelect={(e, data) =>
+        //   dispatch({ type: "UPDATE_SELECTION", selection: data.result.title })
+        // }
+        // onSearchChange={handleSearchChange}
+        // results={results}
+        // value={value}
+      />
+    </Grid.Column>
+  </Grid>
 );
 
-export default Search;
+export default SearchForm;

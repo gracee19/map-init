@@ -71,6 +71,7 @@
 	}	
 }
 
-/* .Search {
-  
-} */
+.SearchForm {
+  margin: auto;
+  align-items: center;
+}
