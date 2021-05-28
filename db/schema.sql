@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS mapinit_db;
+CREATE DATABASE mapinit_db;
