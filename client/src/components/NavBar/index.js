@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Button, Dropdown, Menu } from 'semantic-ui-react';
-import {Link} from "react-router-dom";
+import { Dropdown, Menu, Image } from 'semantic-ui-react';
+// import {Link} from "react-router-dom";
+import Profile from '../DropdownUser';
 
 export default class NavBar extends Component {
+  // const [userInfo, setUserInfo] = useState(null);
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -12,6 +14,7 @@ export default class NavBar extends Component {
 
     return (
       <Menu size='tiny' inverted>
+          <Image src='/mapinit-logo.png'/>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}
@@ -34,7 +37,14 @@ export default class NavBar extends Component {
           </Dropdown>
 
           <Menu.Item>
-            <Button inverted color='standard' as={Link} to={"/"}>Log Out</Button>
+            {/* <Dropdown item text={""}>
+            <Dropdown.Menu> 
+              <Button inverted color='standard' className="userlog" as={Link} to={"/"}>Account</Button>
+              <Button inverted color='standard' >Settings</Button>
+              <Button inverted color='standard' as={Link} to={"/"}>Logout</Button>
+            </Dropdown.Menu>
+            </Dropdown> */}
+            <Profile/>
           </Menu.Item>
         </Menu.Menu>
       </Menu>

@@ -1,75 +1,132 @@
-import React, { useState } from "react";
-import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
+import React, { Component } from "react";
+import { Grid, Header, Form, Image, Segment } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
+export default class SignUp extends Component {
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    submittedName: "",
+    submittedEmail: "",
+    submittedPassword: "",
+  };
 
-function SignUp() {
-  const [name, userName] = useState();
-  const [email, userMail] = useState();
-  const [password, userPass] = useState();
+  handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name);
-    console.log(email);
-    console.log(password);
+  handleSubmit = () => {
+    const { username, email, password } = this.state;
 
-    // if (email && password) {
-    //   const response = fetch("/signup", {
-    //     method: "POST",
-    //     body: JSON.stringify({ email, password }),
-    //     headers: { "Content-Type": "application/json" },
-    //   });
-    //   if (response.ok) {
-    //     // If successful, redirect the browser to the profile page
-    //     document.location.replace("/map");
-    //   } else {
-    //     alert(response.statusText);
-    //   }
-    // }
+    this.setState({
+      submittedName: username,
+      submittedEmail: email,
+      submittedPassword: password,
+    });
+    console.log("form submitted");
+  };
+  // console.log(this.state.email);
+  // console.log(this.state.password);
+
+  // if (email && password) {
+  //   const response = fetch("/signup", {
+  //     method: "POST",
+  //     body: JSON.stringify({ email, password }),
+  //     headers: { "Content-Type": "application/json" },
+  //   });
+  //   if (response.ok) {
+  //     // If successful, redirect the browser to the profile page
+  //     document.location.replace("/map");
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // }
+
+  render() {
+    const {
+      username,
+      email,
+      password,
+      submittedName,
+      submittedEmail,
+      submittedPassword,
+    } = this.state;
+
+    return (
+      <Grid
+        textAlign="center"
+        style={{ height: "100vh" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as="h2" color="teal" textAlign="center">
+            <Image src="/mapinit1.logo" /> Create Your Account
+          </Header>
+          <Form size="x-large" onSubmit={this.handleSubmit}>
+            <Segment stacked>
+                <Form.Input
+                  placeholder="Username"
+                  name="username"
+                  value={username}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Input
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Input
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Button content="Submit" type="submit" />
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
+    );
   }
-
-
-  return (
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
-          <Image src="/logo.png" /> Create Your Account
-        </Header>
-        <Form size="large">
-          <Segment stacked>
-            <Form.Input
-              fluid
-              placeholder="First Name"
-              onChange={e => userName(e.target.name)}
-            />
-            <Form.Input
-              fluid
-              placeholder="Last Name"
-            />
-            <Form.Input
-              fluid
-              icon="at"
-              iconPosition="left"
-              placeholder="E-mail address"
-              onChange={e => userMail(e.target.email)}
-            />
-            <Form.Input
-              fluid
-              icon="lock"
-              iconPosition="left"
-              placeholder="Password"
-              type="password"
-              onChange={e => userPass(e.target.password)}
-            />
-
-            <Button color="teal" fluid size="large" onClick={handleSubmit}>
-              Sign Up
-            </Button>
-          </Segment>
-        </Form>
-      </Grid.Column>
-    </Grid>
-  );
 }
 
-export default SignUp;
+{
+  /* <Form.Group>
+              <Segment stacked>
+                <Form.Input
+                  fluid
+                  type="username"
+                  placeholder="Username"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Input
+                  fluid
+                  type="email"
+                  icon="at"
+                  iconPosition="left"
+                  placeholder="E-mail address"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Input
+                  type="password"
+                  icon="lock"
+                  iconPosition="left"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+
+                <Button color="teal" fluid size="large" type="submit">
+                  Sign Up
+                </Button> */
+}
+{
+  /* </Segment>
+            </Form.Group> */
+}
