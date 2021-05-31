@@ -13,7 +13,7 @@ import axios from "axios";
 
 export const api= {
     getSearchedCountry: function(query) {
-        return axios.get(`https://api.opentripmap.com/0.1/en/places/geoname?name=${query}&apikey=5ae2e3f221c38a28845f05b667f379894030a48d298464cab6f3584f`, { params: { q: query} });
+        return axios.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters`, { params: { q: query} });
     }
 
     // getUser: async function(){
