@@ -1,7 +1,8 @@
 ![Licence](https://img.shields.io/badge/LICENSEMIT-skyblue)
 # MAPINIT
 # Description
-This project is made for user so he/she can keep track of his/her budget by seeing her withdrawals and deposit. The user will be able to add expenses and deposit in a given day with or without connection. User will also be able enter transaction offline and when the go online all the transactions will be populated to its total.This way the user will have an accurate balance in record.
+
+This project is made for bucket listing and trip planning. It is made for travelers where they can put a pin on the places that they've been to and look up at some places that they can go to in there future trip. In this app, users are able to login, sign up and logout also they can leave some comments or recommendations about the places that they've been to, upload pictures and like the post of each of the users that they think is good.
 
 ![home](./assets/images/home.png)
 
@@ -16,6 +17,8 @@ Deployed app can be access [here]().
   * [Questions](#questions)
 # Installation
 npm install
+npm i axios
+npm i sequelize
 # Usage
 npm start
 # Licence 
