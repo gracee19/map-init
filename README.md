@@ -4,7 +4,7 @@
 
 This project is made for bucket listing and trip planning. It is made for travelers where they can put a pin on the places that they've been to and look up at some places that they can go to in there future trip. In this app, users are able to login, sign up and logout also they can leave some comments or recommendations about the places that they've been to, upload pictures and like the post of each of the users that they think is good.
 
-![home](./assets/images/home.png)
+![home](./client/public/home.png)
 
 Deployed app can be access [here]().
 # Table Of Contents
